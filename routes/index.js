@@ -1,13 +1,19 @@
+const authorRouter = require('./author.router');
+const bookRouter = require('./book.router');
+const genreRouter = require('./genre.router');
+const orderRouter = require('./order.router');
+const publisherRouter = require('./publisher.router');
+const userRouter = require('./user.router');
 
 
 const router = require('express').Router();
 
-router.use('/author', (req, res) => res.sendStatus(501));
-router.use('/book', (req, res) => res.sendStatus(501));
-router.use('/genre', (req, res) => res.sendStatus(501));
-router.use('/order', (req, res) => res.sendStatus(501));
-router.use('/publisher', (req, res) => res.sendStatus(501));
-router.use('/user', (req, res) => res.sendStatus(501));
+router.use('/author', authorRouter);
+router.use('/book', bookRouter);
+router.use('/genre', genreRouter);
+router.use('/order', orderRouter);
+router.use('/publisher', publisherRouter);
+router.use('/user', userRouter);
 
 
 module.exports = router;
