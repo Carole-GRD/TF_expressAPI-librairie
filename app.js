@@ -6,12 +6,47 @@ require('dotenv').config();
 const express = require('express');
 
 
+// -----------------------
+// Import des cors
+// -----------------------
+
+
 // Importdu middleware express-async-errors
 require('express-async-errors');
 
 
 // Création du serveur
 const app = express();
+
+
+// -----------------------
+// Utilisation des cors
+// -----------------------
+
+
+// -----------------------
+// Import db
+// -----------------------
+
+
+// -----------------------
+// Connection à la db
+// -----------------------
+
+
+// -----------------------
+// Synchro db
+// -----------------------
+
+
+// -----------------------
+// Middleware app-lvl
+// -----------------------
+
+
+// -----------------------
+// Router
+// -----------------------
 
 
 // Ecoute server
