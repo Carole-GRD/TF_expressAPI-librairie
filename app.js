@@ -44,9 +44,9 @@ const app = express();
 // -----------------------
 
 
-// -----------------------
 // Router
-// -----------------------
+const router = require('./routes');
+app.use('/api', router);
 
 
 // Ecoute server
