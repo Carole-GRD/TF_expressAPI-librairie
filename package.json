@@ -1,0 +1,11 @@
+{
+  "name": "expressapi-librairie",
+  "version": "1.0.0",
+  "description": "Projet réalisé dans le cadre du labo de la formation 'Full Stack Développeur Web' chez Technofutur TIC.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carole",
+  "license": "ISC"
+}
