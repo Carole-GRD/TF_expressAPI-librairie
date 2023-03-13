@@ -71,7 +71,7 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        payement_method : {
+        payment_method : {
             type : DataTypes.ENUM,
             values : ['Visa', 'Maestro', 'Payconiq', 'PayPal'],
             allowNull : false,
@@ -79,7 +79,7 @@ module.exports = (sequelize) => {
                 isIn : [['Visa', 'Maestro', 'Payconiq', 'PayPal']] 
             }
         },
-        payement_status : {
+        payment_status : {
             type: DataTypes.ENUM,
             values : ['Payé', 'En attente', 'Refusé', 'Annulé'],
             allowNull: false,

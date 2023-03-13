@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
             allowNull : false,
             unique : 'UK_Publisher_Name'
         },
-        address_street : {
+        street : {
             type: DataTypes.STRING,
             allowNull: true
         },
