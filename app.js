@@ -24,19 +24,22 @@ const app = express();
 // -----------------------
 
 
-// -----------------------
 // Import db
-// -----------------------
+const db = require('./models');
 
 
-// -----------------------
 // Connection à la db
-// -----------------------
+db.sequelize.authenticate()
+    .then(() => console.log('Connection DB succeful'))
+    .catch((err) => console.log('Connection DB failed : ', err))
 
 
-// -----------------------
 // Synchro db
-// -----------------------
+console.log('node_env : ', process.env.NODE_ENV);  // -> developement
+if(process.env.NODE_ENV === 'development') {
+    // db.sequelize.sync({ force : true });
+    // db.sequelize.sync({ alter : { drop : false }});
+}
 
 
 // -----------------------
