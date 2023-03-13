@@ -35,7 +35,7 @@ db.sequelize.authenticate()
 
 
 // Synchro db
-console.log('node_env : ', process.env.NODE_ENV);  // -> developement
+// console.log('node_env : ', process.env.NODE_ENV);  // -> developement
 if(process.env.NODE_ENV === 'development') {
     // db.sequelize.sync({ force : true });
     // db.sequelize.sync({ alter : { drop : false }});
