@@ -17,6 +17,11 @@ module.exports = (sequelize) => {
                 isIn: {
                     args: [['En attente', 'Terminée']],
                     msg: "Le statut de la commande doit être 'En attente' ou 'Terminée'"
+                },
+                customValidator(value) {
+                    if (this.payment_status === 'Payé' && this.delivery_status === 'expédiée') {
+                        return value = 'Terminée'
+                    }
                 }
             }
         },
@@ -39,14 +44,12 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
-                validate: {
-                    isInt : {
-                        msg : 'Le numéro de la rue doit être un nombre entier'
-                    },
-                    min: {
-                        args: [1],
-                        msg: 'Le numéro de la rue doit être supérieur ou égal à 1'
-                    }
+                isInt : {
+                    msg : 'Le numéro de la rue doit être un nombre entier'
+                },
+                min: {
+                    args: [1],
+                    msg: 'Le numéro de la rue doit être supérieur ou égal à 1'
                 }
             }
         },
@@ -80,13 +83,24 @@ module.exports = (sequelize) => {
             }
         },
         payment_status : {
-            type: DataTypes.ENUM,
+            type : DataTypes.ENUM,
             values : ['Payé', 'En attente', 'Refusé', 'Annulé'],
             allowNull: false,
             validate: {
                 isIn: {
                     args: [['Payé', 'En attente', 'Refusé', 'Annulé']],
                     msg: "Le statut de paiement doit être 'Payé', 'En attente', 'Refusé' ou 'Annulé'"
+                }
+            }
+        },
+        delivery_status : {
+            type : DataTypes.ENUM,
+            values : ['en cours de traitement', 'en cours de préparation', 'prêt pour expédition', 'expédiée'],
+            allowNull : false,
+            validate : {
+                isIn: {
+                    args: [['en cours de traitement', 'en cours de préparation', 'prêt pour expédition', 'expédiée']],
+                    msg: "Le statut de paiement doit être 'en cours de traitement', 'en cours de préparation', 'prêt pour expédition' ou 'expédiée'"
                 }
             }
         }
