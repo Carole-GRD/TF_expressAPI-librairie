@@ -1,4 +1,4 @@
-const bookController = require('../controllers/book.contgroller');
+const bookController = require('../controllers/book.controller');
 
 
 const bookRouter = require('express').Router();
@@ -11,6 +11,9 @@ bookRouter.route('/:id')
     .get(bookController.getById)
     .put(bookController.update)
     .delete(bookController.delete)
+
+bookRouter.route('/author/:id')
+    .get(bookController.getByGenre)
 
 bookRouter.route('/genre/:id')
     .get(bookController.getByGenre)

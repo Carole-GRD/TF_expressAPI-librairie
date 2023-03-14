@@ -30,6 +30,15 @@ const bookController = {
     },
 
     /** 
+     * Get By Author
+     * @param { Request } req
+     * @param { Response } res
+     */
+     getByAuthor : (req, res) => {
+        res.sendStatus(501);
+    },
+
+    /** 
      * Create
      * @param { Request } req
      * @param { Response } res
