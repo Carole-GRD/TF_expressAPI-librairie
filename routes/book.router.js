@@ -13,7 +13,7 @@ bookRouter.route('/:id')
     .delete(bookController.delete)
 
 bookRouter.route('/author/:id')
-    .get(bookController.getByGenre)
+    .get(bookController.getByAuthor)
 
 bookRouter.route('/genre/:id')
     .get(bookController.getByGenre)

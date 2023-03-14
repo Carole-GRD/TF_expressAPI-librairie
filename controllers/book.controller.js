@@ -21,20 +21,20 @@ const bookController = {
     },
 
     /** 
-     * Get By Genre
-     * @param { Request } req
-     * @param { Response } res
-     */
-     getByGenre : (req, res) => {
-        res.sendStatus(501);
-    },
-
-    /** 
      * Get By Author
      * @param { Request } req
      * @param { Response } res
      */
      getByAuthor : (req, res) => {
+        res.sendStatus(501);
+    },
+
+    /** 
+     * Get By Genre
+     * @param { Request } req
+     * @param { Response } res
+     */
+     getByGenre : (req, res) => {
         res.sendStatus(501);
     },
 
