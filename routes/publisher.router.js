@@ -1,13 +1,14 @@
+const publisherController = require('../controllers/publisher.controller');
 
 const publisherRouter = require('express').Router();
 
 publisherRouter.route('/')
-    .get((req, res) => res.sendStatus(501))
-    .post((req, res) => res.sendStatus(501))
+    .get(publisherController.getAll)
+    .post(publisherController.create)
 
 publisherRouter.route('/:id')
-    .get((req, res) => res.sendStatus(501))
-    .put((req, res) => res.sendStatus(501))
-    .delete((req, res) => res.sendStatus(501))
+    .get(publisherController.getById)
+    .put(publisherController.update)
+    .delete(publisherController.delete)
 
 module.exports = publisherRouter;

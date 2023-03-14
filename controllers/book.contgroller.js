@@ -1,7 +1,7 @@
 const { Request, Response } = require('express');
 
 
-const authorController = {
+const bookController = {
     /** 
      * Get ALL
      * @param { Request } req
@@ -17,6 +17,15 @@ const authorController = {
      * @param { Response } res
      */
     getById : (req, res) => {
+        res.sendStatus(501);
+    },
+
+    /** 
+     * Get By Genre
+     * @param { Request } req
+     * @param { Response } res
+     */
+     getByGenre : (req, res) => {
         res.sendStatus(501);
     },
 
@@ -48,4 +57,4 @@ const authorController = {
     }
 }
 
-module.exports = authorController;
+module.exports = bookController;

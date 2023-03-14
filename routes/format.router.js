@@ -1,15 +1,18 @@
+const formatController = require('../controllers/format.controller');
 
 
 const formatRouter = require('express').Router();
 
 formatRouter.route('/')
-    .get((req, res) => res.sendStatus(501))
-    .post((req, res) => res.sendStatus(501))
+    .get(formatController.getAll)
+    .post(formatController.create)
 
 formatRouter.route('/:id')
-    .get((req, res) => res.sendStatus(501))
-    .put((req, res) => res.sendStatus(501))
-    .delete((req, res) => res.sendStatus(501))
+    .get(formatController.getById)
+    .put(formatController.update)
+    .delete(formatController.delete)
 
+formatRouter.route('/book/:id')
+    .get(formatController.getByBook)
 
 module.exports = formatRouter;

@@ -1,17 +1,16 @@
+const userController = require('../controllers/user.controller');
 
 
 const userRouter = require('express').Router();
 
 userRouter.route('/')
-    .get((req, res) => res.sendStatus(501))
-    .post((req, res) => res.sendStatus(501))
+    .get(userController.getAll)
+    .post(userController.create)
 
 userRouter.route('/:id')
-    .get((req, res) => res.sendStatus(501))
-    .put((req, res) => res.sendStatus(501))
-    .delete((req, res) => res.sendStatus(501))
+    .get(userController.getById)
+    .put(userController.update)
+    .delete(userController.delete)
 
-userRouter.route('/:id/order')
-    .get((req, res) => res.sendStatus(501))
 
 module.exports = userRouter;

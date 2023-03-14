@@ -1,7 +1,7 @@
 const { Request, Response } = require('express');
 
 
-const authorController = {
+const genreController = {
     /** 
      * Get ALL
      * @param { Request } req
@@ -19,6 +19,7 @@ const authorController = {
     getById : (req, res) => {
         res.sendStatus(501);
     },
+
 
     /** 
      * Create
@@ -48,4 +49,4 @@ const authorController = {
     }
 }
 
-module.exports = authorController;
+module.exports = genreController;

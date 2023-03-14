@@ -1,21 +1,19 @@
+const bookController = require('../controllers/book.contgroller');
 
 
 const bookRouter = require('express').Router();
 
 bookRouter.route('/')
-    .get((req, res) => res.sendStatus(501))
-    .post((req, res) => res.sendStatus(501))
+    .get(bookController.getAll)
+    .post(bookController.create)
 
 bookRouter.route('/:id')
-    .get((req, res) => res.sendStatus(501))
-    .put((req, res) => res.sendStatus(501))
-    .delete((req, res) => res.sendStatus(501))
-
-bookRouter.route('/:id/format')                 
-    .get((req, res) => res.sendStatus(501))
+    .get(bookController.getById)
+    .put(bookController.update)
+    .delete(bookController.delete)
 
 bookRouter.route('/genre/:id')
-    .get((req, res) => res.sendStatus(501))
+    .get(bookController.getByGenre)
 
 
 module.exports = bookRouter;

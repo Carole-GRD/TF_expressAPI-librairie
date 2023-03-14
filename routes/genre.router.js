@@ -1,14 +1,15 @@
+const genreController = require('../controllers/genre.controller');
 
 
 const genreRouter = require('express').Router();
 
 genreRouter.route('/')
-    .get((req, res) => res.sendStatus(501))
-    .post((req, res) => res.sendStatus(501))
+    .get(genreController.getAll)
+    .post(genreController.create)
 
 genreRouter.route('/:id')
-    .get((req, res) => res.sendStatus(501))
-    .put((req, res) => res.sendStatus(501))
-    .delete((req, res) => res.sendStatus(501))
+    .get(genreController.getById)
+    .put(genreController.update)
+    .delete(genreController.delete)
 
 module.exports = genreRouter;
