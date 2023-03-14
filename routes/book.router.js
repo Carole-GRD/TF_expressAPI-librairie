@@ -11,7 +11,11 @@ bookRouter.route('/:id')
     .put((req, res) => res.sendStatus(501))
     .delete((req, res) => res.sendStatus(501))
 
-bookRouter.route('/:genre')
+bookRouter.route('/:id/format')                 
     .get((req, res) => res.sendStatus(501))
+
+bookRouter.route('/genre/:id')
+    .get((req, res) => res.sendStatus(501))
+
 
 module.exports = bookRouter;

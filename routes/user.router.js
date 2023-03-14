@@ -11,4 +11,7 @@ userRouter.route('/:id')
     .put((req, res) => res.sendStatus(501))
     .delete((req, res) => res.sendStatus(501))
 
+userRouter.route('/:id/order')
+    .get((req, res) => res.sendStatus(501))
+
 module.exports = userRouter;
