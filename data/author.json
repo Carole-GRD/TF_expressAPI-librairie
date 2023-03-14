@@ -1,0 +1,23 @@
+[
+    {
+        "firstname": "Ernest",
+        "lastname": "Hemingway",
+        "birthdate": "1899-06-21",
+        "biography": "Ernest Hemingway est un écrivain et journaliste né le 21 juillet 1899 à Oak Park, dans l’État de l’Illinois, aux États-Unis, et décédé le 2 juillet 1961 à Ketchum, dans l’État de l’Idaho. C’est l’un des romanciers les plus influents de l’entre-deux-guerres, récompensé par un prix Nobel de littérature en 1954 pour l’ensemble de son œuvre. Il est notamment l’auteur de Le Soleil se lève aussi (1926), de L’Adieu aux armes (1929) et du Vieil homme et la mer (1952).",
+        "photo": null
+    },
+    {
+        "firstname": "J.K.",
+        "lastname": "Rowling",
+        "birthdate": "1965-06-31",
+        "biography": "Auteure à succès, J. K. Rowling a fait fortune en écrivant des livres, des pièces de théâtre et des scénarios de films. Elle est principalement connue pour avoir écrit la saga de romans Harry Potter.",
+        "photo": null
+    },
+    {
+        "firstname": "Stephen",
+        "lastname": "King",
+        "birthdate": "1947-09-21",
+        "biography": "Né en 1947 à Portland (Maine), Stephen King a connu son premier succès en 1974 avec Carrie. En une quarantaine d’années, on lui doit plus de cinquante romans et autant de nouvelles, certains sous le pseudonyme de Richard Bachman. Il a reçu de nombreuses distinctions littéraires, dont le prestigieux Grand Master Award des Mystery Writers of America pour l’ensemble de sa carrière en 2007. Son œuvre est largement adaptée au cinéma et à la télévision.",
+        "photo": null
+    }
+]

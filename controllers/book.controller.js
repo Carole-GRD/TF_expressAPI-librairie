@@ -1,4 +1,6 @@
 const { Request, Response } = require('express');
+const bookService = require('../services/book.service');
+const { SuccessArrayResponse, SuccessResponse } = require('../utils/success.response');
 
 
 const bookController = {
@@ -7,8 +9,9 @@ const bookController = {
      * @param { Request } req
      * @param { Response } res
      */
-     getAll : (req, res) => {
-        res.sendStatus(501);   
+     getAll : async (req, res) => {
+        const { books, count } = await bookService.getAll();
+        res.status(200).json(new SuccessArrayResponse(books, count));
     },
 
     /** 
@@ -16,8 +19,14 @@ const bookController = {
      * @param { Request } req
      * @param { Response } res
      */
-    getById : (req, res) => {
-        res.sendStatus(501);
+    getById : async (req, res) => {
+        const { id } = req.params;
+        const book = await bookService.getById(id);
+        if (!book) {
+            res.sendStatus(404);
+            return;
+        }
+        res.status(200).json(new SuccessResponse(book));
     },
 
     /** 
@@ -43,8 +52,11 @@ const bookController = {
      * @param { Request } req
      * @param { Response } res
      */
-    create : (req, res) => {
-        res.sendStatus(501);
+    create : async (req, res) => {
+        const data = req.body;
+        const book = await bookService.create(data);
+        res.location('/book/' + book.id);
+        res.status(201).json(new SuccessResponse(book, 201));
     },
 
     /** 
@@ -52,8 +64,15 @@ const bookController = {
      * @param { Request } req
      * @param { Response } res
      */
-    update : (req, res) => {
-        res.sendStatus(501);
+    update : async (req, res) => {
+        const { id } = req.params;
+        const data = req.body;
+        const isUpdated = await bookService.update(id, data);
+        if (!isUpdated) {
+            res.sendStatus(404);
+            return;
+        }  
+        res.sendStatus(204);
     },
 
     /** 

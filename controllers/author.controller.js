@@ -1,4 +1,6 @@
 const { Request, Response } = require('express');
+const authorService = require('../services/author.service');
+const { SuccessArrayResponse, SuccessResponse } = require('../utils/success.response');
 
 
 const authorController = {
@@ -7,8 +9,9 @@ const authorController = {
      * @param { Request } req
      * @param { Response } res
      */
-     getAll : (req, res) => {
-        res.sendStatus(501);   
+     getAll : async (req, res) => {
+        const { authors, count } = await authorService.getAll();
+        res.status(200).json(new SuccessArrayResponse(authors, count));
     },
 
     /** 
@@ -16,8 +19,14 @@ const authorController = {
      * @param { Request } req
      * @param { Response } res
      */
-    getById : (req, res) => {
-        res.sendStatus(501);
+    getById : async (req, res) => {
+        const { id } = req.params;
+        const author = await authorService.getById(id);
+        if (!author) {
+            res.sendStatus(404);
+            return;
+        }
+        res.status(200).json(new SuccessResponse(author));
     },
 
     /** 
@@ -25,8 +34,11 @@ const authorController = {
      * @param { Request } req
      * @param { Response } res
      */
-    create : (req, res) => {
-        res.sendStatus(501);
+    create : async (req, res) => {
+        const data = req.body;
+        const author = await authorService.create(data);
+        res.location('/author/' + author.id);
+        res.status(201).json(new SuccessResponse(author, 201));
     },
 
     /** 
@@ -34,8 +46,15 @@ const authorController = {
      * @param { Request } req
      * @param { Response } res
      */
-    update : (req, res) => {
-        res.sendStatus(501);
+    update : async (req, res) => {
+        const { id } = req.params;
+        const data = req.body;
+        const isUpdated = await authorService.update(id, data);
+        if (!isUpdated) {
+            res.sendStatus(404);
+            return;
+        }  
+        res.sendStatus(204);
     },
 
     /** 
@@ -43,8 +62,14 @@ const authorController = {
      * @param { Request } req
      * @param { Response } res
      */
-    delete : (req, res) => {
-        res.sendStatus(501);
+    delete : async (req, res) => {
+        const { id } = req.params;
+        const isDeleted = await authorService.delete(id);
+        if (!isDeleted) {
+            res.sendStatus(404);
+            return;
+        }
+        res.sendStatus(204);
     }
 }
 

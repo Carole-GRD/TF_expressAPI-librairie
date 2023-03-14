@@ -1,6 +1,6 @@
-const AuthorDTO = require("./author.dto");
+const AuthorBookDTO = require("./author.book.dto");
 const FormatDTO = require("./format.dto");
-const OrderDTO = require("./order.dto");
+
 
 class BookDTO {
     constructor( 
@@ -11,7 +11,9 @@ class BookDTO {
             description, 
             publication_date, 
             cover,
-            Orders,
+            Publisher,
+            Genre,
+            
             Formats,
             Authors 
         } ) {
@@ -22,9 +24,12 @@ class BookDTO {
                 this.publication_date = publication_date;
                 this.cover = cover ?? null;
 
-                this.Orders = Orders ? Orders.map(order => new OrderDTO(order)) : [];
+                this.Publisher = Publisher;
+                this.Genre = Genre;
+                // console.log(Authors);
+                Authors.forEach(author => console.log(author))
                 this.Formats = Formats ? Formats.map(format => new FormatDTO(format)) : [];
-                this.Authors = Authors ? Authors.map(author => new AuthorDTO(author)) : [];
+                this.Authors = Authors ? Authors.map(author => new AuthorBookDTO(author)) : [];
             }
 }
 

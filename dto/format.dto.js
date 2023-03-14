@@ -1,4 +1,4 @@
-const BookDTO = require("./book.dto");
+// const BookDTO = require("./book.dto");
 
 class FormatDTO {
     constructor( { id, name, MM_Format_Book } ) {
@@ -8,5 +8,7 @@ class FormatDTO {
         this.quantity = MM_Format_Book.quantity ? MM_Format_Book.quantity : null;
     }
 }
+// ATTENTION aux boucle infinie si besoin à un moment du BookDTO
+// format -> book -> fomrat -> ...
 
 module.exports = FormatDTO;

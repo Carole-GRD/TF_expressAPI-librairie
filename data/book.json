@@ -1,0 +1,38 @@
+[
+    {
+        "ISBN": "9782253151623",
+        "title": "Shining",
+        "description": "Situé dans les montagnes Rocheuses, l’Overlook Palace passe pour être l’un des plus beaux lieux du monde. Confort, luxe, volupté… L’hiver, l’hôtel est fermé. Coupé du monde par le froid et la neige. Alors, seul l’habite un gardien. Celui qui a été engagé cet hiver-là s’appelle Jack Torrance: c’est un alcoolique, un écrivain raté, qui tente d’échapper au désespoir. Avec lui vivent sa femme, Wendy, et leur enfant, Danny. Danny qui possède le don de voir, de ressusciter les choses et les êtres que l’on croit disparus. Ce qu’il sent, lui, dans les cent dix chambres vides de l’Overlook Palace, c’est la présence du démon. Cauchemar ou réalité, le corps de cette femme assassinée? ces bruits de fête qui dérivent dans les couloirs ? cette vie si étrange qui anime l’hôtel? Un récit envoûtant immortalisé à l’écran par Stanley Kubrick.",
+        "publication_date" : "2013-10-03",
+        "cover": null,
+        "PublisherId": null,
+        "GenreId" : null,
+        "orders": [],
+        "formats" : [
+            {
+                "id": null,
+                "price": 7.50,
+                "quantity": 2
+            }
+        ],
+        "authors": [1]
+    },
+    {
+        "ISBN": "9782253096764",
+        "title": "Carrie",
+        "description": "Carrie White, dix-sept ans, solitaire, timide et pas vraiment jolie, vit un calvaire : elle est victime du fanatisme religieux de sa mère et des moqueries incessantes de ses camarades de classe. Sans compter ce don, cet étrange pouvoir de déplacer les objets à distance, bien qu’elle le maîtrise encore avec diffi culté... Un jour, cependant, la chance paraît lui sourire. Tommy Ross, le seul garçon qui semble la comprendre et l’aimer, l’invite au bal de printemps de l’école. Une marque d’attention qu’elle n’aurait jamais espérée, et peut-être même le signe d’un renouveau !",
+        "publication_date" : "2010-01-06",
+        "cover": null,
+        "PublisherId": null,
+        "GenreId" : null,
+        "orders": [],
+        "formats" : [
+            {
+                "id": null,
+                "price": 8.50,
+                "quantity": 2
+            }
+        ],
+        "authors": [1]
+    }
+]
