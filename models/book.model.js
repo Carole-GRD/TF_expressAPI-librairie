@@ -57,33 +57,8 @@ module.exports = (sequelize) => {
             validate: {
                 notEmpty: true, 
             },
-        },
-        number_copies : {
-            type : DataTypes.INTEGER,
-            allowNull : false,
-            validate : {
-                isInt : {
-                    msg : 'Le nombre de livres disponibles doit être un nombre entier'
-                },
-                min : {
-                    args : [0],
-                    msg : 'Le nombre de livres disponibles doit être positif'
-                }
-            }
-        },
-        price : {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            validate: {
-                isFloat: true, 
-                min: {
-                    args: [0], 
-                    msg: "Le prix ne peut pas être négatif",
-                },
-            },
         }
-       
-        // format_id : {} 
+
         // genre_id : {} 
         // publisher_id : {} 
         // ↑ foreign key qui pointe vers la primary key de la table "User"
